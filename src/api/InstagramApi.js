@@ -57,7 +57,7 @@ const authenticateInstagram = ({ instagramClientId, instagramRedirectUri }, call
   };
   const popup = window.open('localhost', '', `width=${windowDimension.popupWidth},height=${windowDimension.popupHeight}`);
   popup.onload = () => {
-    popup.open(`https://instagram.com/oauth/authorize/?client_id=${instagramClientId}&redirect_uri=${instagramRedirectUri}&response_type=token`, '_self');
+    popup.open(`https://instagram.com/oauth/authorize/?client_id=${instagramClientId}&redirect_uri=${instagramRedirectUri}&response_type=token&scope=public_content+follower_list`, '_self');
     const interval = setInterval(() => {
       try {
         if (popup.location.hash.length) {
